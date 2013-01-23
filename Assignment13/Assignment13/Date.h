@@ -4,11 +4,14 @@
 
 class Date {
  public:
+  Date();
+  Date(int date, Month mon, int year);
+  Date(Month mon, )
  
 private:
   int date = 1;
   enum Month{
-    January = 1,FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, NOVEMBER, DECEMBER
+    January = 1, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, NOVEMBER, DECEMBER
   };
   int year = 2000;
 
