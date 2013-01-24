@@ -57,3 +57,23 @@ string Date::monthToString(Month month){
 		default: return "";
 	}
 }
+
+int Date::daysInMonth(Month month, int year){
+	return month==2?(28+isLeapYear(year)):31-(month-1)%7%2;		
+}
+
+bool Date::isLeapYear(int year){
+	return (year%4==0 && year%100!=0)||(year%100==0 && year%400==0);
+}
+
+ostream & operator<<(ostream & os, Date d1){
+	return os << d1.toString();
+}
+
+bool operator==(Date d1, Date d2){
+	return d1.day == d2.day && d1.month == d2.month && d1.year == d1.year;
+}
+
+bool operator!=(Date d1, Date d2){
+	return !(d1==d2);
+}
