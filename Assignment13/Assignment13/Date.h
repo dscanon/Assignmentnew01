@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 enum Month{
- 		JANUARY = 1,FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, NOVEMBER, DECEMBER
+			JANUARY = 1,FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, NOVEMBER, DECEMBER
 		};
 
 class Date {
@@ -41,7 +41,7 @@ class Date {
 		int year;
 };
 
-std::ostream & operator<<(std::ostream & os, Date dat);
+std::ostream & operator<<(std::ostream & os, Date d1);
 bool operator==(Date d1, Date d2);
 bool operator!=(Date d1, Date d2);
 bool operator< (Date d1, Date d2);
