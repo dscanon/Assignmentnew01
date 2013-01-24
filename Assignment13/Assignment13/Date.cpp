@@ -1,70 +1,59 @@
-#include<string>
-class Date{
-	int date;
-	string month;
-	int year;
-	void Date(){
-	date = 1;
-	month = "January";
-	year = 2000;
-	}
-	void Date(string month,int a,int b){
-		if(a>b){
-			year = a;
-			date = b;
-		}
-		else{
-			date = a;
-			year = b;
-		}
+#include <iostream>
+#include <string>
+#include <sstream>
+#include "Date.h"
+using namespace std;
+
+Date::Date(){
+	this->day = 1;
+	this->month = JANUARY;
+	this->year = 2000;
+}
+
+Date::Date(int day, Month month, int year){
+	this->day = day;
 	this->month = month;
-	}
-	void Date(int a,string month,int b){
-		if(a>b){
-			year = a;
-			date = b;
-		}
-		else{
-			date = a;
-			year = b;
-		}
+	this->year = year;
+}
+
+Date::Date(Month month, int day, int year){
 	this->month = month;
+	this->day = day;
+	this->year = year;
+}
+
+int Date::getDay(){
+	return day;
+}
+
+Month Date::getMonth(){
+	return month;
+}
+
+int Date::getYear(){
+	return year;
+}
+
+string Date::toString(){
+	string str;
+	ostringstream stream(str);
+	stream << day << "-" << monthToString(month).substr(0,3) << "-" <<year;
+	return stream.str();
+}
+
+string Date::monthToString(Month month){
+	switch(month){
+		case JANUARY: return "January";
+		case FEBRUARY: return "February";
+		case MARCH: return "March";
+		case APRIL: return "April";
+		case MAY: return "May";
+		case JUNE: return "June";
+		case JULY: return "July";
+		case AUGUST: return "August";
+		case SEPTEMBER: return "September";
+		case NOVEMBER: return "November";
+		case DECEMBER: return "December";
+		default: return "";
 	}
-	void Date(int a, int b, string month){
-		if(a>b){
-			year = a;
-			date = b;
-		}
-		else{
-			date = a;
-			year = b;
-		}
-	this->month = month;
-	}
-	
-	int getDate(int a){return a;}
-	string getMonth(string str){return str;}
-	int getYear(int b){return b;}
-	string toString(){
-	return date+"-"+month+"-"+year;
-	}
-	int dayInMonth(string month,int year){
-		if(month =="January"||"March"||"July"||"August"||"October"||"December"){
-		return 31;
-		}
-		if(month =="April"||"May"||"June"||"September"||"November"){
-		return 30;
-		}
-		if(month=="Febuary"){
-			if(year%4==0){return 29;}
-			return 28;
-		}
-		bool isLeapYear(int year01){
-			if(year01%4==0){
-			return true;
-			}
-			else{
-			return false;
-			}
-		}
 }
