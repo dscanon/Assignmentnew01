@@ -77,3 +77,24 @@ bool operator==(Date d1, Date d2){
 bool operator!=(Date d1, Date d2){
 	return !(d1==d2);
 }
+
+bool operator<(Date d1, Date d2){
+	if (d1.year < d2.year) return true;
+	else {
+		if(d1.month < d2.month && d1.year == d2.year) return true;
+		else if (d1.month == d2.month && d1.year == d2.year && d1.day < d2.day) return true;
+		else return false;
+	}
+}
+
+bool operator<=(Date d1, Date d2){
+	return d1<d2 || d1==d2;
+}
+
+bool operator>(Date d1, Date d2){
+	return !(d1<=d2);
+}
+
+bool operator>=(Date d1, Date d2){
+	return d1 > d2 || d1==d2
+}
