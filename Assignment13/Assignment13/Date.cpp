@@ -63,7 +63,7 @@ int Date::daysInMonth(Month month, int year){
 }
 
 bool Date::isLeapYear(int year){
-	return (year%4==0 && year%100!=0)||(year%100==0 && year%400==0);
+	return (year%4==0 && year%100!=0)||year%400==0;
 }
 
 ostream & operator<<(ostream & os, Date d1){
