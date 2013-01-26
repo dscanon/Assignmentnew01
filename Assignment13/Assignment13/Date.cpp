@@ -98,3 +98,20 @@ bool operator>(Date d1, Date d2){
 bool operator>=(Date d1, Date d2){
 	return d1 > d2 || d1==d2
 }
+Date operator+(Date d1, int n){
+	if(d1.day+n<daysInMonth(month)
+	{
+		d1.day += n;
+		return d1;
+	}
+	else{
+		while(d1.day+n>daysInMonth(month)){
+			n=n+d1.day-dayInMonth(month);
+			month++;
+				while(month>12){
+				month=1;
+				year++;	
+				}	
+		}	
+	}		
+}	
