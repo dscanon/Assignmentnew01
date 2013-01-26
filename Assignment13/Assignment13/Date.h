@@ -1,9 +1,10 @@
 #ifndef _Date_h
+#ifndef _Date_h
 #define _Date_h
 #include <string>
 #include <iostream>
 enum Month{
- 		JANUARY = 1,FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, NOVEMBER, DECEMBER
+ 		JANUARY = 1,FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER
 		};
 
 class Date {
@@ -33,6 +34,7 @@ class Date {
 		friend Date operator++(Date d1, int );
 		friend Date operator--(Date d1);
 		friend Date operator--(Date d1, int);
+		friend Date & operator=(Date & date);
 
  
 	private:
@@ -57,4 +59,5 @@ Date operator++(Date d1);
 Date operator++(Date d1, int );
 Date operator--(Date d1);
 Date operator--(Date d1, int);
+Date & operator=(Date & date);
 #endif
