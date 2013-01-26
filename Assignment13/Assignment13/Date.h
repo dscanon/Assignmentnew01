@@ -16,8 +16,8 @@ class Date {
 		Month getMonth();
 		int getYear();
 		std::string toString();
-		int daysInMonth(Month month, int year);
-		bool isLeapYear(int year);
+		static int daysInMonth(Month month, int year);
+		static bool isLeapYear(int year);
 		std::string monthToString(Month month);
 		friend bool operator==(Date d1, Date d2);
 		friend bool operator!=(Date d1, Date d2);
