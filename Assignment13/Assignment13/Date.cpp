@@ -99,7 +99,7 @@ bool operator>=(Date d1, Date d2){
 	return d1 > d2 || d1==d2
 }
 Date operator+(Date d1, int n){
-	if(d1.day+n<daysInMonth(month)
+	if(d1.day+n<daysInMonth(month))
 	{
 		d1.day += n;
 		return d1;
