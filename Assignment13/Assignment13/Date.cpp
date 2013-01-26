@@ -96,22 +96,43 @@ bool operator>(Date d1, Date d2){
 }
 
 bool operator>=(Date d1, Date d2){
-	return d1 > d2 || d1==d2
+	return d1 > d2 || d1==d2;
 }
 Date operator+(Date d1, int n){
-	if(d1.day+n<daysInMonth(month))
+	if(d1.day+n<=daysInMonth(d1.month))
 	{
 		d1.day += n;
 		return d1;
 	}
-	else{
-		while(d1.day+n>daysInMonth(month)){
-			n=n+d1.day-dayInMonth(month);
-			month++;
-				while(month>12){
-				month=1;
+	else{	
+		int m=d1.day+n;
+		while(m>daysInMonth(d1.month)){
+			m=m-dayInMonth(d1.month);
+			Month(d1.month++);
+  				while(d1.month>12){
+				d1.month=1;
 				year++;	
 				}	
 		}	
 	}		
-}	
+}
+Date operator-(Date d1, int n){
+	if(n<d1.day){
+		d1.day = d1.day-n;
+		return d1;
+	}
+	else{	
+		int m=n-d1.day;
+		while(m>0){
+			d1.month--;
+			while(m>daysInMonth(month)){
+				m = m-daysInMonth(month);
+				month--;
+			}
+			d1.day = daysInMonth(month)-m;
+			return d1;
+		}
+		
+	}
+	
+}
