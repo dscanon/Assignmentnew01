@@ -184,28 +184,11 @@ Date & Date::operator=(Date d1){
 	return *this;
 }
 Date & Date::operator+=(int n){
-	day += n;
-	while(day > Date::daysInMonth(month,year)){
-		day -= Date::daysInMonth(month,year);
-		(Month)month = Month(month+1);
-		if(month > 12){
-			month = Month(1);
-			year++;
-		}
-	}
+	*this = *this+n;
 	return *this;
 }
 Date & Date::operator-=(int n){
-	day -= n;
-	while(day<=0){
-		month = Month (month-1);
-		if(month < 1){
-			month = Month(12);
-			year--;
-		}
-		day = Date::daysInMonth(month, year)+day;
-	}
-	
+	*this = *this-n;
 	return *this;
 }
 
