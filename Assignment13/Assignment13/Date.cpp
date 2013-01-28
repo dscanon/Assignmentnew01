@@ -72,7 +72,7 @@ ostream & operator<<(ostream & os, Date d1){
 }
 
 bool operator==(Date d1, Date d2){
-	return d1.day == d2.day && d1.month == d2.month && d1.year == d1.year;
+	return d1.day == d2.day && d1.month == d2.month && d1.year == d2.year;
 }
 
 bool operator!=(Date d1, Date d2){
